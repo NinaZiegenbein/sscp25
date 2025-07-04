@@ -1,0 +1,83 @@
+Patient Number,LV Donut,LV Bloodpool,RV,Looks Okay,,Needs Segmentation
+1,Yes,No,No,Yes,,1
+3,Yes,No,No,Yes,,1
+4,Yes,No,No,Yes,,1
+8,Yes,No,No,Yes,,1
+12,Yes,Yes,Yes,Yes,,0
+17,Yes,No,No,Yes,,1
+21,Yes,No,No,Yes,,1
+27,Yes,No,Yes,? (RA/RV),,1
+31,Yes,No,No,Yes,,1
+35,Yes,No,No,Yes,,1
+39,Yes,No,No,Yes,,1
+53,Yes,Yes,Yes,Yes,,0
+54,Yes,No,No,Yes,,1
+58,Yes,No,No,Yes,,1
+62,Yes,No,No ,Yes,,1
+63,Yes,No,No,Yes,RV cut off (very zoomed in),1
+65,Yes,No,No,Yes,,1
+66,Yes,No,No,Yes,,1
+67,yes,yes,yes,Yes,,0
+70,Yes,No,No,Yes,,1
+73,Yes,No,No,Yes,,1
+75,Yes,No,No,Yes,,1
+76,Yes,No,No,Yes,,1
+78,Yes,No,No,Yes,,1
+84,Yes,No,No,Yes,,1
+91,Yes,No,No,Yes,,1
+92,Yes,No,No,Yes,RV is slightly cut off.... but ok ,1
+93,Yes,No,No,Yes,,1
+94,Yes,No,No,Yes,,1
+95,Yes,No,No,Yes,,1
+96,Yes,No,No,Yes,,1
+97,Yes,No,No,Yes,,1
+102,Yes,No,No,Yes,,1
+103,Yes,No,No,Yes,,1
+105,Yes,No,No,Yes,,1
+106,Yes,No,No,Yes,,1
+107,Yes,No,No,Yes,,1
+108,Yes,No,No,Yes,,1
+109,Yes,No,No,Yes,,1
+112,Yes,No,No,Yes,,1
+114,yes,no,no,yes,,1
+118,yes,no,no,yes,,1
+120,yes,yes,yes,yes,,0
+121,yes,no,no,yes,,1
+123,yes,no,no,yes,,1
+126,yes,yes,yes,yes,,0
+127,yes,yes,yes,yes,,0
+129,yes,yes,yes,yes,,0
+130,yes,yes,yes,yes,,0
+132,yes,yes,yes,yes,,0
+137,yes,no,no,yes,"very zoomed in, RV only partially on it",1
+138,yes,yes,yes,yes,,0
+139,yes,no,no,yes,,1
+141,yes,no,no,yes,,1
+142,yes,no,no,yes,,1
+144,yes,no,no,yes,,1
+145,yes,no,no,yes,RV very slightly cut off ,1
+146,yes,yes,yes,yes,,0
+149,yes,no,no,yes,,1
+150,yes,no,no,yes,,1
+151,yes,no,no,yes,,1
+152,yes,no,no,yes,,1
+157,yes,no,no,yes,,1
+158,yes,no,no,yes,,1
+160,yes,no,no,yes,,1
+161,yes,no,no,yes,,1
+162,yes,no,no,yes,,1
+163,yes,no,no,yes,,1
+164,yes,no,no,yes,,1
+166,yes,yes,yes,yes,,0
+167,yes,no,no,yes,,1
+169,yes,no,no,yes,,1
+170,yes,no,no,yes,,1
+171,yes,no,no,yes,,1
+175,yes,no,no,yes,,1
+176,yes,no,no,yes,,1
+178,yes,no,no,yes,,1
+180,yes,no,no,yes,,1
+181,yes,no,no,yes,,1
+182,yes,no,no,yes,,1
+187,yes,no,no,yes,,1
+188,yes,no,no,yes,,1
