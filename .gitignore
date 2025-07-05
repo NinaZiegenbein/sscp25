@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+# Images or Segmentations
+*.nii
+*.npy
+*.hdf5
+
 # Distribution / packaging
 .Python
 build/
