@@ -25,7 +25,7 @@ If you just want to activate the environment without re-running installation you
 pipenv shell
 ```
 
-You can add new packages to the virual environment in the following way:
+You can add new packages to the virtual environment in the following way:
 
 ```
 pipenv install <package-name>
