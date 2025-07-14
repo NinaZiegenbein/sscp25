@@ -12,6 +12,7 @@ nibabel = "*"
 scipy = "*"
 huggingface-hub = "*"
 opencv-python = "*"
+saxomode = {git = "git+https://github.com/ComputationalPhysiology/MAD-SSA.git"}
 
 [dev-packages]
 ipykernel = "*"
