@@ -4,7 +4,7 @@ Repository for the project "Cardiac MRI Statistical Shape Model Analysis" of the
 
 ### Virtual environment setup
 
-You can createa a virtual environment and install all required packages using `pipenv`. If you don't already have `pipenv` installed you can install it by running the following command:
+You can create a virtual environment and install all required packages using `pipenv`. If you don't already have `pipenv` installed you can install it by running the following command:
 
 ```
 pip install --user pipenv
