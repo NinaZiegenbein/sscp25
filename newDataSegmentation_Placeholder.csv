@@ -1,0 +1,34 @@
+ID,ED frame,apex,base,Folder order,Folders (y/n),Double Series (y/n),Slice(s) of Double Series,Notes
+142,29,10,4,10-9-8-7-6-5-4,y,n,,
+144,38,13,6,13-12-11-10-9-8-7-6,y,n,,Slice 7 should be ignored I think
+145,35,12,3,12-11-10-9-8-7-6-5-4-3,y,n,,Slice 7 should be ignored I think
+146,0,10,4,10-9-8-7-6-5-4,y,y,6,
+149,0,13,2,13-12-11-10-9-8-7-6-5-4-3-2,y,n,,Slice 7 should be ignored I think
+150,24,13,4,13-12-11-10-9-8-7-6-5-4,y,y,7,
+151,0,11,4,11-10-9-8-7-6-5-4,y,y,6,
+152,0,12,5,12-11-10-9-8-7-6-5,y,n,,Slice 7 should be ignored I think
+157,0,13,4,13-12-11-10-9-8-7-6-5-4,y,n,,Slice 7 should be ignored I think
+158,29,10,3,10-9-8-7-6-5-4-3,y,n,,
+160,1,11,4,11-10-9-8-7-6-5-4,y,n,,Slice 7 should be ignored I think
+161,24,14,5,14-13-12-11-10-9-8-7-6-5,y,n,,
+162,1,12,6,12-11-10-9-8-7-6,y,n,,Slice 7 should be ignored I think
+164,0,10,2,10-9-8-7-6-5-4-3-2,y,n,,Slice 7 should be ignored I think
+166,14,9,2,9-8-7-6-5-4-3-2-1,y,n,,
+167,1,12,4,12-11-10-9-8-7-6-5-4,y,n,,Slice 7 should be ignored I think
+169,29,10,3,10-9-8-7-6-5-4-3,y,n,,Slice 6 should be ignored I think
+170,1,13,4,13-12-11-10-9-8-7-6-5-4,y,n,,Slice 7 should be ignored I think
+171,1,9,2,9-8-7-6-5-4-3-2,y,n,,
+175,0,11,4,11-10-9-8-7-6-5-4,y,n,,
+176,0,10,4,10-9-8-7-6-5-4,y,y,6,
+178,0,10,5,10-9-8-7-6-5,y,y,6,
+180,29,11,5,11-10-9-8-7-6-5,y,n,,
+181,29,10,6,10-9-8-7-6,y,n,,
+182,38,11,4,11-10-9-8-7-6-5-4,y,y,6,
+188,37,12,4,12-11-10-9-8-7-6-5-4,y,n,,Slice 7 should be ignored I think
+91,38,13,3,13-12-11-10-9-8-7-6-5-4-3,y,n,,based on ED
+92,38,12,3,12-11-10-9-8-7-6-5-4-3,y,n,,based on ED
+93,0,12,2,12-11-10-9-8-7-6-5-4-3-2,y,n,,based on ED
+94,0,13,4,13-12-11-10-9-8-7-6-5-4,y,n,,based on ED
+95,24,11,1,11-10-9-8-7-6-5-4-3-2-1,y,n,,"based on ED, bad quality"
+96,1,12,3,12-11-10-9-8-7-6-5-4-3,y,n,,based on ED
+97,38,14,4,14-13-12-11-10-9-8-7-6-5-4,y,n,,based on ED
