@@ -1,0 +1,23 @@
+﻿ID,ED frame,apex,base,folder order,Folders (y/n),Comment
+1,29,9,3,"0-1-2-3-4-5-6-7-8-9-10",y,Dark images
+3,0,12,5,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14",y,Slice 7 has bad quality
+4,57,10,2,"0-1-2-3-4-5-6-7-8-9-10-11-12",y,Slice 6 has bad quality (23 time frames)
+8,0,14,4,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16",y,Slice 8 has bad quality (26 time frames)
+12,0,8,3,"0-1-2-3-4-5-6-7-8-9-10",y
+17,0,11,4,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14",y,Slice 7 has bad quality (29 time frames)
+21,0,11,5,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14",y, Slice 7 has bad quality (20 time frames)
+27,29,14,7,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14-15",y,
+31,38,12,3,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14",y,
+35,38,12,6,"0-1-2-3-4-5-6-7-8-9-10-11-12-13",y,
+39,0,13,4,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14",y,Slice 7 has bad quality (26 time frames)
+53,0,11,5,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14",y,Slice 7 has bad quality (26 time frames)
+54,0,12,4,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14",y, Slice 5 has different contrast; slice 7 has bad quality (26 time frames)
+58,0,10,5,"0-1-2-3-4-5-6-7-8-9-10-11-12",y,Slice 6 has bad quality (16 time frames)
+62,0,11,5,"0-1-2-3-4-5-6-7-8-9-10-11-12-13",y,Poor quality
+63,0,13,5,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14",y, Slice 7 has bad quality (26 time frames)
+65,38,13,4,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14",y,Slice 7 has bad quality (26 time frames)
+67,38,10,2,"0-1-2-3-4-5-6-7-8-9-10-11-12-13",y
+70,0,12,5,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14",y,Slice 7 has bad quality (20 time frames)
+73,77,11,4,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14",y,Slice 7 has bad quality (26 time frames)
+75,30,12,4,"0-1-2-3-4-5-6-7-8-9-10-11-12-13-14",y,Slice 7 has bad quality (18 time frames)
+76,29,8,2,"0-1-2-3-4-5-6-7-8-9-10-11",y
