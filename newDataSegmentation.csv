@@ -49,7 +49,6 @@ ID,ED frame,apex,base,Folder order,Folders (y/n),Double Series (y/n),Slice(s) of
 129,38,14,5,,y,,,delete 7
 130,0,15,3,,y,,,delete 8!
 132,38,14,3,,y,,,delete 7
-136,29,-85.4,-15.4,,n,,,"different structure - no slice folders, but sliceloc and triggertime, folder original-primary-m-retro-norm-dis2dfm4_2-fil"
 137,0,14,6,,y,,,"delete 7, not apex yet, but last slice"
 138,38,13,2,,y,,,
 139,0,14,4,,y,,,delete 7
