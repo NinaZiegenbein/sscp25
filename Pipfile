@@ -6,13 +6,14 @@ name = "pypi"
 [packages]
 matplotlib = "*"
 monai = "*"
-pandas = "*"
+pandas = ">=1.3"
 pydicom = "*"
 nibabel = "*"
 scipy = "*"
 huggingface-hub = "*"
 opencv-python = "*"
-saxomode = {git = "git+https://github.com/ComputationalPhysiology/MAD-SSA.git"}
+openpyxl = "*"
+saxomode = { git = "https://github.com/ComputationalPhysiology/MAD-SSA.git" }
 
 [dev-packages]
 ipykernel = "*"
