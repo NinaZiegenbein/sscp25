@@ -20,6 +20,25 @@ import numpy as np
 # df_nor = df[df['DISEASE'] == 'NOR']
 # patients = df_nor['SUBJECT_CODE'].tolist()
 
+def get_value_for_case(case_name):
+        """
+        Reads the Excel file and returns the value for the given case_name.
+        Skips the first row which contains titles.
+        """
+        case_name = int(case_name)
+        input_file="/Users/inad001/Documents/SSCP25/Data and scripts SSCP25/utils/slice_gap.xlsx"
+        try:
+            df = pd.read_excel(input_file,names=["Case", "Value"])
+            row = df.loc[df['Case'] == case_name]
+            if not row.empty:
+                value = row['Value'].values[0]  
+                return int(value) if pd.notnull(value) else None
+            else:
+                return None  
+        except Exception as e:
+            print(f"Error reading the file: {e}")
+            return None
+
 
 def is_valid_slice(slice_mask, max_components=1, solidity_threshold=0.9):
     """
@@ -58,7 +77,9 @@ def create_h5_file(patients: list, base_path: str, output_dir: str):
         try:
             mri_image = nib.load(nii_mri)
             voxel_dimensions = mri_image.header['pixdim'][1:4]  # [x, y, z]
-            slice_gap = voxel_dimensions[2] 
+            # slice_gap = voxel_dimensions[2]
+            slice_gap = get_value_for_case(patient)
+            voxel_dimensions[2] = slice_gap  # Update z dimension with slice gap
             resolution = voxel_dimensions[0:3]  # [x, y]
             
             nii_img = nib.load(nii_file_path)
@@ -129,24 +150,7 @@ def create_h5_file(patients: list, base_path: str, output_dir: str):
 # import pandas as pd
 # from pydicom import dcmread
 # import h5py
-# def get_value_for_case(case_name):
-#         """
-#         Reads the Excel file and returns the value for the given case_name.
-#         Skips the first row which contains titles.
-#         """
-#         case_name = int(case_name)
-#         input_file="/Users/giuliamonopoli/Desktop/PhD /shaping_mad/slice_gap.xlsx"
-#         try:
-#             df = pd.read_excel(input_file,names=["Case", "Value"])
-#             row = df.loc[df['Case'] == case_name]
-#             if not row.empty:
-#                 value = row['Value'].values[0]  
-#                 return int(value) if pd.notnull(value) else None
-#             else:
-#                 return None  
-#         except Exception as e:
-#             print(f"Error reading the file: {e}")
-#             return None
+
 
 # patients = os.listdir("/Users/giuliamonopoli/Desktop/PhD /Data/ES_files/")
 # patients = [171]#[x for x in patients if x != '.DS_Store']
