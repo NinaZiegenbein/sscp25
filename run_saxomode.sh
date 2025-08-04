@@ -32,12 +32,12 @@ for patient_dir in "$DATA_DIR"/*; do
         else
             echo "Segmentation completed for patient directory: $patient_id"
         fi
-        saxomode-createmesh --n $patient_dir
-        if [ $? -ne 0 ]; then
-            echo "Mesh creation failed for patient directory: $patient_id"
-        else
-            echo "Mesh created for patient directory: $patient_id"
-        fi
+        # saxomode-createmesh --n $patient_dir
+        # if [ $? -ne 0 ]; then
+        #     echo "Mesh creation failed for patient directory: $patient_id"
+        # else
+        #     echo "Mesh created for patient directory: $patient_id"
+        # fi
     else
         echo "Skipping non-directory: $patient_dir"
     fi
