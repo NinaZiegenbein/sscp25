@@ -108,7 +108,7 @@ def create_h5_file(patients: list, base_path: str, output_dir: str):
             mkdir = os.path.dirname(output_dir)
             if not os.path.exists(mkdir):
                 os.makedirs(mkdir)
-            output_path = os.path.join(output_dir, f"{patient}.h5")
+            output_path = os.path.join(output_dir, f"{patient}_original_segmentation.h5")
         
             with h5py.File(output_path, 'w') as h5_file:
     #         # Save LVmask
