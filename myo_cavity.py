@@ -26,7 +26,7 @@ def get_value_for_case(case_name):
         Skips the first row which contains titles.
         """
         case_name = int(case_name)
-        input_file="/Users/inad001/Documents/SSCP25/Data and scripts SSCP25/utils/slice_gap.xlsx"
+        input_file="/Users/au698484/Documents/SSCP25_data/Data and scripts SSCP25/utils/slice_gap.xlsx"
         try:
             df = pd.read_excel(input_file,names=["Case", "Value"])
             row = df.loc[df['Case'] == case_name]
