@@ -36,6 +36,11 @@ seg_files/
 settings/
 Aligned_Models/
 PCA_results/
+ES_pointclouds/
+ES_pointclouds_merged/
+pc_motion/
+avg_points_cloud_endo_ED.csv
+avg_points_cloud_epi_ED.csv
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
