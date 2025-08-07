@@ -13,8 +13,8 @@ scipy = "*"
 huggingface-hub = "*"
 opencv-python = "*"
 openpyxl = "*"
-saxomode = { git = "https://github.com/ComputationalPhysiology/MAD-SSA.git" }
 pynrrd = "*"
+saxomode = { git = "https://github.com/ComputationalPhysiology/MAD-SSA.git" }
 
 [dev-packages]
 ipykernel = "*"
