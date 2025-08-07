@@ -34,6 +34,8 @@ MANIFEST
 results/
 seg_files/
 settings/
+Aligned_Models/
+PCA_results/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
