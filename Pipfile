@@ -14,6 +14,7 @@ huggingface-hub = "*"
 opencv-python = "*"
 openpyxl = "*"
 pynrrd = "*"
+seaborn = "*"
 saxomode = { git = "https://github.com/ComputationalPhysiology/MAD-SSA.git" }
 
 [dev-packages]
