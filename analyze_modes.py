@@ -152,7 +152,7 @@ def run_analysis_fibrosis(clinical_data_path, pca_scores_path, num_modes):
         #     clinical_data[["Aborted_cardiac_arrest", "Ventricular_tachycardia"]].fillna(0).sum(axis=1) > 0
         # )
         clinical_data["any_fibrosis"] = (
-            clinical_data[fibrosis_columns].fillna(0).sum(axis=1) > 0
+            clinical_data[fibrosis_columns].sum(axis=1, skipna=True) > 0
         )
 
         
