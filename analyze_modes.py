@@ -43,7 +43,7 @@ def annotate_p_values(ax, p_values, y_pos=3, color="black"):
         ax.annotate(f"P = {p_val:.2f}", (i - 0.4, y_pos), color=color)
 
 
-def run_analysis_arrhythmia(clinical_data_path, pca_scores_path, num_modes):
+def run_analysis_arrhythmia(clinical_data_path, pca_scores_path, num_modes, sex=None):
 
     CLINICAL_DATA_XL = clinical_data_path
     PCA_SCORES_CSV = pca_scores_path
@@ -62,6 +62,12 @@ def run_analysis_arrhythmia(clinical_data_path, pca_scores_path, num_modes):
         clinical_data["any_arrhythmia"] = (
             clinical_data[["Aborted_cardiac_arrest", "Ventricular_tachycardia", "nsVT"]].fillna(0).sum(axis=1) > 0
         )
+        if sex:
+            sex_map = {"male": 1, "female": 0}
+            if sex.lower() not in sex_map:
+                raise ValueError(f"Unknown sex_filter: {sex}")
+            clinical_data = clinical_data[clinical_data["Gender"] == sex_map[sex.lower()]]
+
 
         
         pca_clinical = pca_scores.merge(clinical_data, on="Pat_no")
@@ -112,7 +118,7 @@ def run_analysis_arrhythmia(clinical_data_path, pca_scores_path, num_modes):
         ax.set_ylabel("PCA Score")
         # ax.legend(title="Arrhythmic Composite", loc="upper center")
         ax.legend(
-            title="Arrhythmic Composite",
+            title=f"Arrhythmic Composite {sex or 'all'}",
             loc="upper center",
             bbox_to_anchor=(0.5, 1.2),  # adjust vertical offset as needed
             ncol=2  # layout legend in a row if many labels
@@ -123,11 +129,14 @@ def run_analysis_arrhythmia(clinical_data_path, pca_scores_path, num_modes):
         figure_path = os.path.join(PCA_folder, "figures")
         if not os.path.exists(figure_path):
             os.makedirs(figure_path)
-        plt.savefig(os.path.join(figure_path, "arrhythmia_mode_comparison.svg"))
+        filename = f"arrhythmia_mode_comparison_{sex or 'all'}.svg"
+        plt.savefig(os.path.join(figure_path, filename))
         plt.show()
 
+        
 
-def run_analysis_fibrosis(clinical_data_path, pca_scores_path, num_modes):
+
+def run_analysis_fibrosis(clinical_data_path, pca_scores_path, num_modes, sex=None):
 
     CLINICAL_DATA_XL = clinical_data_path
     PCA_SCORES_CSV = pca_scores_path
@@ -151,6 +160,12 @@ def run_analysis_fibrosis(clinical_data_path, pca_scores_path, num_modes):
         clinical_data["any_fibrosis"] = (
             clinical_data[fibrosis_columns].sum(axis=1, skipna=True) > 0
         )
+
+        if sex:
+            sex_map = {"male": 1, "female": 0}
+            if sex.lower() not in sex_map:
+                raise ValueError(f"Unknown sex_filter: {sex}")
+            clinical_data = clinical_data[clinical_data["Gender"] == sex_map[sex.lower()]]
 
         
         pca_clinical = pca_scores.merge(clinical_data, on="Pat_no")
@@ -201,7 +216,7 @@ def run_analysis_fibrosis(clinical_data_path, pca_scores_path, num_modes):
         ax.set_ylabel("PCA Score")
         # ax.legend(title="Any Fibrosis", loc="upper center")
         ax.legend(
-            title="Any Fibrosis",
+            title=f"Any Fibrosis {sex or 'all'}",
             loc="upper center",
             bbox_to_anchor=(0.5, 1.2),  # adjust vertical offset as needed
             ncol=2  # layout legend in a row if many labels
@@ -217,7 +232,7 @@ def run_analysis_fibrosis(clinical_data_path, pca_scores_path, num_modes):
 
     
 
-def run_analysis_mad(clinical_data_path, pca_scores_path, num_modes):
+def run_analysis_mad(clinical_data_path, pca_scores_path, num_modes, sex=None):
 
     CLINICAL_DATA_XL = clinical_data_path
     PCA_SCORES_CSV = pca_scores_path
@@ -246,6 +261,11 @@ def run_analysis_mad(clinical_data_path, pca_scores_path, num_modes):
             clinical_data[mad_or_mvp_columns].fillna(0).sum(axis=1) > 0
             )
 
+        if sex:
+            sex_map = {"male": 1, "female": 0}
+            if sex.lower() not in sex_map:
+                raise ValueError(f"Unknown sex_filter: {sex}")
+            clinical_data = clinical_data[clinical_data["Gender"] == sex_map[sex.lower()]]
             
         pca_clinical = pca_scores.merge(clinical_data, on="Pat_no")
             
@@ -284,7 +304,7 @@ def run_analysis_mad(clinical_data_path, pca_scores_path, num_modes):
         ax.set_ylabel("PCA Score")
         # ax.legend(title="Any Fibrosis", loc="upper center")
         ax.legend(
-            title="MAD or MVP",
+            title=f"MAD or MVP {sex or 'all'}",
             loc="upper center",
             bbox_to_anchor=(0.5, 1.2),  # adjust vertical offset as needed
             ncol=2  # layout legend in a row if many labels
