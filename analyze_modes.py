@@ -148,9 +148,6 @@ def run_analysis_fibrosis(clinical_data_path, pca_scores_path, num_modes):
                             'LGE_MV_Hopp',
                             'LGE_chordae_Hopp']
     
-        # clinical_data["arrhythmic_composite"] = (
-        #     clinical_data[["Aborted_cardiac_arrest", "Ventricular_tachycardia"]].fillna(0).sum(axis=1) > 0
-        # )
         clinical_data["any_fibrosis"] = (
             clinical_data[fibrosis_columns].sum(axis=1, skipna=True) > 0
         )
@@ -158,7 +155,6 @@ def run_analysis_fibrosis(clinical_data_path, pca_scores_path, num_modes):
         
         pca_clinical = pca_scores.merge(clinical_data, on="Pat_no")
         
-        # pca_clinical_event = pca_clinical[pca_clinical["arrhythmic_composite"]]
         pca_clinical_event = pca_clinical[pca_clinical["any_fibrosis"]]
         pca_clinical_noevent = pca_clinical[~pca_clinical["any_fibrosis"]]
 
@@ -217,6 +213,89 @@ def run_analysis_fibrosis(clinical_data_path, pca_scores_path, num_modes):
         if not os.path.exists(figure_path):
             os.makedirs(figure_path)
         plt.savefig(os.path.join(figure_path, "fibrosis_mode_comparison.svg"))
+        plt.show()
+
+    
+
+def run_analysis_mad(clinical_data_path, pca_scores_path, num_modes):
+
+    CLINICAL_DATA_XL = clinical_data_path
+    PCA_SCORES_CSV = pca_scores_path
+    NUM_MODES = num_modes
+    ANALYSIS_MODES = [f"M{i}" for i in range(1, NUM_MODES + 1)]
+
+    clinical_data = load_patient_data(CLINICAL_DATA_XL)
+
+    pca_scores = load_pca_scores(PCA_SCORES_CSV)
+
+    if clinical_data is not None and pca_scores is not None:
+
+        # Create a new column in clinical data that sets all values in mitral_regurg to 1 if the values are above 1
+        clinical_data["Mitral_cleaned"] = clinical_data["Mitral_regurg"].apply(lambda x: 1 if x > 1 else 0)
+
+        mad_or_mvp_columns = ["CMR_MAD_3_CH_Y_N",
+                              "MADplax_presence",
+                              "MVP_new",
+                              "Ant_leaf",
+                              "Post_leaf",
+                              "Bileaflet_new",
+                              "Mitral_cleaned",
+                              "T_inv_inf_wall"]
+
+        clinical_data["any_mad"] = (
+            clinical_data[mad_or_mvp_columns].fillna(0).sum(axis=1) > 0
+            )
+
+            
+        pca_clinical = pca_scores.merge(clinical_data, on="Pat_no")
+            
+        pca_clinical_event = pca_clinical[pca_clinical["any_mad"]]
+        pca_clinical_noevent = pca_clinical[~pca_clinical["any_mad"]]
+
+        any_mad = pca_clinical["any_mad"].sum()
+            
+        # Statistical Analysis
+        mann_whitney_p_values = calculate_mann_whitney(
+            pca_clinical_event, pca_clinical_noevent, ANALYSIS_MODES
+            )
+        print(pd.DataFrame([mann_whitney_p_values], columns=ANALYSIS_MODES, index=["p-value"]))
+
+        # Prepare Data for Plotting
+        pca_scores_stacked = pca_scores[ANALYSIS_MODES].stack().reset_index(level=1)
+        pca_scores_stacked.columns = ["mode", "score"]
+        clinical_data_pca_stacked = clinical_data.merge(pca_scores_stacked, on="Pat_no")
+
+        # Plotting
+        plt.rcParams.update({"font.size": 14})
+        fig, ax = plt.subplots(figsize=(12, 6))
+        sns.boxplot(
+            data=clinical_data_pca_stacked,
+            x="mode",
+            y="score",
+            hue="any_mad",
+            ax=ax,
+            palette="Set2",
+        )
+
+
+        ax.set_ylim(-3, 5)
+        annotate_p_values(ax, mann_whitney_p_values, y_pos=4)
+        ax.set_xlabel("Patient Mode Score (Standardized)")
+        ax.set_ylabel("PCA Score")
+        # ax.legend(title="Any Fibrosis", loc="upper center")
+        ax.legend(
+            title="MAD or MVP",
+            loc="upper center",
+            bbox_to_anchor=(0.5, 1.2),  # adjust vertical offset as needed
+            ncol=2  # layout legend in a row if many labels
+        )
+
+        plt.tight_layout()
+        PCA_folder = PCA_SCORES_CSV.rsplit('/', 1)[0]
+        figure_path = os.path.join(PCA_folder, "figures")
+        if not os.path.exists(figure_path):
+            os.makedirs(figure_path)
+        plt.savefig(os.path.join(figure_path, "mad_mode_comparison.svg"))
         plt.show()
 
 
