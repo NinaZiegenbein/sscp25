@@ -233,8 +233,12 @@ def run_analysis_mad(clinical_data_path, pca_scores_path, num_modes):
         # Create a new column in clinical data that sets all values in mitral_regurg to 1 if the values are above 1
         clinical_data["Mitral_cleaned"] = clinical_data["Mitral_regurg"].apply(lambda x: 1 if x > 1 else 0)
 
-        mad_or_mvp_columns = ["CMR_MAD_3_CH_Y_N",
-                              "MADplax_presence",
+        clinical_data["Mad_presence"] = clinical_data.apply(
+            lambda row: 1 if (row["CMR_MAD_3_CH_Y_N"] == 1 or row["MADplax_presence"] == 1) else 0,
+            axis=1
+        )
+
+        mad_or_mvp_columns = ["Mad_presence",
                               "MVP_new",
                               "Ant_leaf",
                               "Post_leaf",
