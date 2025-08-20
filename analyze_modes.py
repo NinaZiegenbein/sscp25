@@ -126,6 +126,8 @@ def run_analysis_arrhythmia(clinical_data_path, pca_scores_path, num_modes):
         plt.savefig(os.path.join(figure_path, "arrhythmia_mode_comparison.svg"))
         plt.show()
 
+    return pca_clinical_event
+
 
 def run_analysis_fibrosis(clinical_data_path, pca_scores_path, num_modes):
 
@@ -214,6 +216,8 @@ def run_analysis_fibrosis(clinical_data_path, pca_scores_path, num_modes):
             os.makedirs(figure_path)
         plt.savefig(os.path.join(figure_path, "fibrosis_mode_comparison.svg"))
         plt.show()
+    
+    return pca_clinical
 
     
 
@@ -301,6 +305,8 @@ def run_analysis_mad(clinical_data_path, pca_scores_path, num_modes):
             os.makedirs(figure_path)
         plt.savefig(os.path.join(figure_path, "mad_mode_comparison.svg"))
         plt.show()
+
+    return pca_clinical
 
 
 ################# ILR ####################
