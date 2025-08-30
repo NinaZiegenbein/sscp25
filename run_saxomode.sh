@@ -10,7 +10,7 @@ if ! python -c "import saxomode" &> /dev/null; then
 fi
 
 # Define the directory containing the NIfTI files, change to your directory
-DATA_DIR="/Users/au698484/Documents/SSCP25_data/segmented_data_checked"
+DATA_DIR="dataPath/segmented_data_checked"
 
 # Check if the directory exists
 if [ ! -d "$DATA_DIR" ]; then

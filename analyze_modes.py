@@ -5,10 +5,6 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 from scipy import stats
 import os
-# CLINICAL_DATA_XL = "../ClinicalData_OUS_MADPatients_EIVIND_29_4_2021.xlsx"
-# PCA_SCORES_CSV = "./PCA_Results_final_height/pca_scores.csv"
-# NUM_MODES = 10
-# ANALYSIS_MODES = [f"M{i}" for i in range(1, NUM_MODES + 1)]
 
 
 def load_patient_data(file_path):
