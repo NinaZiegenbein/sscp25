@@ -133,6 +133,8 @@ def run_analysis_arrhythmia(clinical_data_path, pca_scores_path, num_modes, sex=
         plt.savefig(os.path.join(figure_path, filename))
         plt.show()
 
+    return pca_clinical_event
+
         
 
 
@@ -341,6 +343,12 @@ def run_analysis_madmvp(clinical_data_path, pca_scores_path, num_modes, sex=None
         )
 
         mad_or_mvp_columns = ["Mad_presence",
+        clinical_data["Mad_presence"] = clinical_data.apply(
+            lambda row: 1 if (row["CMR_MAD_3_CH_Y_N"] == 1 or row["MADplax_presence"] == 1) else 0,
+            axis=1
+        )
+
+        mad_or_mvp_columns = ["Mad_presence",
                               "MVP_new",
                               "Ant_leaf",
                               "Post_leaf",
@@ -408,6 +416,8 @@ def run_analysis_madmvp(clinical_data_path, pca_scores_path, num_modes, sex=None
             os.makedirs(figure_path)
         plt.savefig(os.path.join(figure_path, "mad_mode_comparison.svg"))
         plt.show()
+
+    return pca_clinical
 
 def run_analysis_mad(clinical_data_path, pca_scores_path, num_modes, sex=None):
 
@@ -492,6 +502,8 @@ def run_analysis_mad(clinical_data_path, pca_scores_path, num_modes, sex=None):
             os.makedirs(figure_path)
         plt.savefig(os.path.join(figure_path, "mad_mode_comparison.svg"))
         plt.show()
+    return pca_clinical
+
 
 ################# ILR ####################
 # loopdata = clinical_data.merge(pca_scores, on = "Pat_no").query("ILR_y_n == 1")

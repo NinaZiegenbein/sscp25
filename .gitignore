@@ -42,6 +42,8 @@ pc_motion/
 avg_points_cloud_endo_ED.csv
 avg_points_cloud_epi_ED.csv
 PCA_results_motion/
+PCA_results_2sd/
+PCA_results_motion_v2/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
